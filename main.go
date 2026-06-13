@@ -16,7 +16,7 @@ import (
 
 const (
 	discordAPIURL = "https://discord.com/api/v10"
-	userAgent     = "OldMessageDeletor (wissididom.de, 1)"
+	userAgent     = "MessageCleaner (wissididom.de, 1)"
 )
 
 type Message struct {
@@ -149,11 +149,8 @@ func confirm(prompt string) bool {
 }
 
 func main() {
-	// Load environment variables from .env file
-	err := godotenv.Load()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Warning: Could not load .env file: %v\n", err)
-	}
+	// Load .env file if it exists
+	_ = godotenv.Load()
 
 	discordToken := os.Getenv("DISCORD_TOKEN")
 	guildID := os.Getenv("SERVER_ID")

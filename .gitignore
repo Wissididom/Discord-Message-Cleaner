@@ -22,6 +22,3 @@ Discord-Message-Cleaner
 *.swo
 *~
 .DS_Store
-
-# Dependencies
-go.sum
