@@ -10,6 +10,8 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/joho/godotenv"
 )
 
 const (
@@ -148,6 +150,12 @@ func confirm(prompt string) bool {
 }
 
 func main() {
+	// Load environment variables from .env file
+	err := godotenv.Load()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Warning: Could not load .env file: %v\n", err)
+	}
+
 	discordToken := os.Getenv("DISCORD_TOKEN")
 	guildID := os.Getenv("SERVER_ID")
 	channelID := os.Getenv("CHANNEL_ID")
