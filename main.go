@@ -128,7 +128,7 @@ func deleteMessage(token string, channelID string, msgID string, reason *string)
 	url := fmt.Sprintf("%s/channels/%s/messages/%s", discordAPIURL, channelID, msgID)
 
 	if reason == nil {
-		defaultReason := "Pepe-Deletor"
+		defaultReason := "Cleanup Discord Messages that might be older than 14 days"
 		reason = &defaultReason
 	}
 

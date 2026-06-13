@@ -55,4 +55,3 @@ Environment variables:
 
 - The application fetches up to 100 messages at a time
 - Rate limits are automatically handled
-- Messages are deleted with the reason "Pepe-Deletor" by default
