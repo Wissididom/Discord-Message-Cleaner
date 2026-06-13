@@ -18,11 +18,11 @@ jobs:
         os: ["ubuntu-latest", "macos-latest", "windows-latest"]
         include:
           - os: ubuntu-latest
-            output: Discord-Message-Cleaner
+            output: Discord-Message-Cleaner-Linux
           - os: macos-latest
-            output: Discord-Message-Cleaner
+            output: Discord-Message-Cleaner-Mac
           - os: windows-latest
-            output: Discord-Message-Cleaner.exe
+            output: Discord-Message-Cleaner-Windows.exe
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -52,15 +52,6 @@ jobs:
         with:
           path: release-artifacts/
           merge-multiple: true
-
-      - name: Rename Windows Binary
-        run: mv release-artifacts/Discord-Message-Cleaner.exe release-artifacts/Discord-Message-Cleaner-Windows.exe
-
-      - name: Rename Linux Binary
-        run: mv release-artifacts/Discord-Message-Cleaner release-artifacts/Discord-Message-Cleaner-Linux
-
-      - name: Rename Mac Binary
-        run: mv release-artifacts/Discord-Message-Cleaner release-artifacts/Discord-Message-Cleaner-Mac
 
       - name: Create release
         uses: ncipollo/release-action@v1.21.0
