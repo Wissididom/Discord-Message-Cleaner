@@ -21,7 +21,6 @@ const (
 
 type Message struct {
 	ID        string    `json:"id"`
-	AuthorID  string    `json:"author"`
 	Author    Author    `json:"author"`
 	Timestamp time.Time `json:"timestamp"`
 	Content   string    `json:"content"`
