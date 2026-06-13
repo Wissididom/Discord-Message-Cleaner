@@ -1,0 +1,26 @@
+name: Go Vetting
+
+permissions:
+  "contents": "read"
+
+on:
+  push:
+    branches: ["master", "main"]
+  pull_request:
+    branches: ["master", "main"]
+
+jobs:
+  formatting:
+    name: Vetting
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: "1.26.3"
+      - name: go vet
+        run: |
+          go vet
+          git --no-pager diff --exit-code --color=never

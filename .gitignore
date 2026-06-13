@@ -1,2 +1,24 @@
+# Environment
 .env
-node_modules/
+!example.env
+
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.so.*
+*.dylib
+Discord-Message-Cleaner
+
+# Test binaries
+*.test
+*.out
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
